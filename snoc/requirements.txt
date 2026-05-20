@@ -1,0 +1,11 @@
+numpy>=1.24
+matplotlib>=3.7
+scipy>=1.11
+opencv-python>=4.8
+Pillow>=10.0
+scikit-optimize>=0.9
+
+# Optional — enables GPU-accelerated batch feature extraction in
+# core/pooling.py, core/scoring.py, and percolation_threshold/precollation_test.py.
+# MPS (Apple Silicon), CUDA, and CPU are all supported automatically.
+# torch>=2.0

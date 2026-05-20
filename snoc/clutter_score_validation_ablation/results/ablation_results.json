@@ -1,0 +1,84 @@
+{
+  "scale": {
+    "Baseline": {
+      "rho": 0.9429,
+      "tau": 0.8667,
+      "delta": 0.0
+    },
+    "Drop 10 mm": {
+      "rho": 0.9429,
+      "tau": 0.8667,
+      "delta": 0.0
+    },
+    "Drop 50 mm": {
+      "rho": 0.8286,
+      "tau": 0.7333,
+      "delta": -0.1143
+    },
+    "Drop 200 mm": {
+      "rho": 0.9429,
+      "tau": 0.8667,
+      "delta": 0.0
+    },
+    "Drop 500 mm": {
+      "rho": 0.9429,
+      "tau": 0.8667,
+      "delta": 0.0
+    }
+  },
+  "feat_frag": {
+    "Full (avg + max)": {
+      "rho": 0.9429,
+      "tau": 0.8667
+    },
+    "Avg-pool only": {
+      "rho": -0.9429,
+      "tau": -0.8667
+    },
+    "Max-pool only": {
+      "rho": 1.0,
+      "tau": 1.0
+    }
+  },
+  "feat_occ": {
+    "Full (avg + max)": {
+      "rho": 1.0,
+      "tau": 1.0
+    },
+    "Avg-pool only": {
+      "rho": 1.0,
+      "tau": 1.0
+    },
+    "Max-pool only": {
+      "rho": 0.7619,
+      "tau": 0.6742
+    }
+  },
+  "resolution": {
+    "0.5": {
+      "rho": 1.0,
+      "tau": 1.0,
+      "min_block": 20
+    },
+    "1.0": {
+      "rho": 1.0,
+      "tau": 1.0,
+      "min_block": 10
+    },
+    "2.0": {
+      "rho": 1.0,
+      "tau": 1.0,
+      "min_block": 5
+    },
+    "4.0": {
+      "rho": 1.0,
+      "tau": 1.0,
+      "min_block": 2
+    },
+    "8.0": {
+      "rho": 1.0,
+      "tau": 1.0,
+      "min_block": 1
+    }
+  }
+}

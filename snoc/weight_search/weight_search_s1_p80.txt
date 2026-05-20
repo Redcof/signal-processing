@@ -1,0 +1,15 @@
+The results reveal something important that changes the paper. Here is the honest interpretation.
+
+What the results actually say
+The most striking finding is that all three search methods converge to the same ρ = 0.7488, regardless of what the weights are — as long as w₁ (density) is small. The grid search landscape shows a flat plateau: any combination with low w₁ achieves the same correlation. This means density (f₁) is actively hurting the score on Bernoulli fields, while fragmentation (f₃) and irregularity (f₂) are the informative features.
+The analytical inverse-variance result explains why: Var(D) = 0.01969 but Var(I) = 0.000003. On Bernoulli fields, the irregularity feature has almost zero variance across images — it barely discriminates anything. Density has the most variance, which is why the inverse-variance formula assigns it near-zero weight (w₁ = 0.0000).
+
+The core problem this exposes
+The Bernoulli GT label is essentially p — foreground fraction. Fragmentation (f₃) correlates strongly with p because denser fields have more occupied blocks. So maximising ρ against this GT simply finds the weight that puts most emphasis on fragmentation, which already tracks p almost perfectly. The weight search is partially circular on pure Bernoulli fields.
+
+What this means for the paper
+Three honest options:
+Option A — Run the weight search on OCID real images where the GT is mask-geometry-based (entropy + CC count + radial variance) rather than just occupancy p. This breaks the circularity and gives a more meaningful weight. This is the right scientific choice.
+Option B — Acknowledge the flat landscape explicitly. State in the paper that on Bernoulli fields the score is robust to weight choice (ρ is constant across a wide range), and use the analytically motivated inverse-variance weights from Step 3.
+Option C — Keep the heuristic weights (0.40, 0.35, 0.25) but remove the claim that they were found by grid search + Bayesian optimisation. Replace with: "weights were initialised heuristically and validated post-hoc by confirming ρ is stable across a wide neighbourhood of the simplex."
+Recommend Option A — run on OCID. Shall I do that now?

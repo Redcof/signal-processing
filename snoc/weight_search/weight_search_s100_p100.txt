@@ -1,0 +1,29 @@
+Running weight search: 100 seeds × 100 images
+=======================================================
+  seed  10/100 done  grid_rho=0.7519  bayes_rho=0.7519
+  seed  20/100 done  grid_rho=0.7518  bayes_rho=0.7518
+  seed  30/100 done  grid_rho=0.7516  bayes_rho=0.7516
+  seed  40/100 done  grid_rho=0.7518  bayes_rho=0.7518
+  seed  50/100 done  grid_rho=0.7519  bayes_rho=0.7519
+  seed  60/100 done  grid_rho=0.7520  bayes_rho=0.7520
+  seed  70/100 done  grid_rho=0.7521  bayes_rho=0.7521
+  seed  80/100 done  grid_rho=0.7521  bayes_rho=0.7521
+  seed  90/100 done  grid_rho=0.7521  bayes_rho=0.7521
+  seed 100/100 done  grid_rho=0.7522  bayes_rho=0.7522
+
+=================================================================
+Method                          w1 mean±std    w2 mean±std    w3 mean±std
+-----------------------------------------------------------------
+  Prior (heuristic)          0.4000±0.0000  0.3500±0.0000  0.2500±0.0000
+  Grid search                0.0500±0.0000  0.0665±0.0600  0.8835±0.0600
+  Bayesian optimisation      0.5800±0.0000  0.3767±0.0000  0.0432±0.0000
+  Inverse-variance           0.0000±0.0000  0.9980±0.0001  0.0020±0.0001
+
+=================================================================
+Method                         rho mean    rho std    rho min    rho max
+-----------------------------------------------------------------
+  Prior (heuristic)            0.752170   0.001814   0.748443   0.756328
+  Grid search                  0.752170   0.001814   0.748443   0.756328
+  Bayesian optimisation        0.752170   0.001814   0.748443   0.756328
+  Inverse-variance             0.772575   0.007698   0.755584   0.797144
+
