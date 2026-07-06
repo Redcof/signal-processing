@@ -314,9 +314,9 @@ ax.set_ylabel("Clutter score")
 ax.set_title("D2: Score profiles\n(occupancy sweep)")
 ax.legend(fontsize=8); ax.grid(True, alpha=0.3)
 
-path = save_dir / "ablation_complete.png"
+path = save_dir / "ablation_complete.tiff"
 save_fig(fig, path, bw=False)
-copy_figure(path, "figure 5.6.png")
+copy_figure(path, "figure 5.5.tiff")
 
 plt.close(fig)
 print(f"\n  Figure saved: {path}")

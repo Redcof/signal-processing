@@ -111,12 +111,12 @@ def visualize_example_images(save_dir: str, mm_per_pixel: float):
         else:
             colors.append("black")
             desc_s.append(f"p = {p:.4f}")
-    file_name="figure3_percolation_samples.png"
+    file_name="figure3_percolation_samples.tiff"
     figure_analysis_grid(mm_per_pixel, save_dir, main_images, desc_s, colors,
             file_name=file_name,
         title="Sample Images and Pooled Maps at Key Occupancy Values")
     path = save_dir / file_name
-    copy_figure(path, "figure 5.4.png")
+    copy_figure(path, "figure 5.4.tiff")
     
     frag_blob_configs = [
         ("1 large blob",  'black',    make_blob_field(n_blobs=1,  radius=100)),
@@ -128,12 +128,12 @@ def visualize_example_images(save_dir: str, mm_per_pixel: float):
     ]
     
     desc_s, colors, main_images = map(list, zip(*frag_blob_configs))
-    file_name="figure3_sythentic_fragmented_blobs.png"
+    file_name="figure3_sythentic_fragmented_blobs.tiff"
     figure_analysis_grid(mm_per_pixel, save_dir, main_images, desc_s, colors,
             file_name=file_name,
         title="Fragmented Blobs and Pooled Maps")
     path = save_dir / file_name
-    copy_figure(path, "figure 5.2.png")
+    copy_figure(path, "figure 5.2.tiff")
 
 if __name__ == "__main__":
     save_dir = pathlib.Path(__file__).parent / "results"

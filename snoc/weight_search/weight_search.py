@@ -207,9 +207,9 @@ ax.set_ylabel("Weight value"); ax.set_title("Weight comparison across methods")
 ax.legend(fontsize=8); ax.grid(True, alpha=0.3, axis="y"); ax.set_ylim(0, 0.75)
 
 plt.tight_layout()
-fig.savefig(f"{SAVE_DIR}/weight_search_results.png", dpi=130, bbox_inches="tight")
+fig.savefig(f"{SAVE_DIR}/weight_search_results.tiff", dpi=130, bbox_inches="tight")
 plt.close(fig)
-print(f"\n  Figure saved: {SAVE_DIR}/weight_search_results.png")
+print(f"\n  Figure saved: {SAVE_DIR}/weight_search_results.tiff")
 
 # save final weights
 np.save(f"{SAVE_DIR}/optimal_weights.npy",

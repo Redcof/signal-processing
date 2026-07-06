@@ -19,7 +19,7 @@ import csv, os
 root_dir = pathlib.Path(__file__).parent / "results"
 root_dir.mkdir(exist_ok=True)
 CSV_PATH = root_dir / "percolation_summary.csv"
-OUT_PNG  = root_dir / "percolation_summary.png"
+OUT_PNG  = root_dir / "percolation_summary.tiff"
 PC       = 0.5927   # theoretical threshold
 
 def load(path):
@@ -76,6 +76,7 @@ bw     = 0.28
 
 # ── Panel 1: Inflection point bar + error bars ────────────────────────────────
 ax = fig.add_subplot(gs[0, 0])
+assert len(data) == len(STYLES), f"This script can only support {len(STYLES)} percolation experients found {len(data)}"
 for i, d in enumerate(data):
     s = STYLES[i]
     ax.bar(i, d["inf"], color=s["color"], edgecolor="white",
@@ -203,6 +204,6 @@ fig.legend(handles=patches, loc="lower center", ncol=4,
            bbox_to_anchor=(0.5, -0.015))
 
 save_fig(fig, OUT_PNG, bw=True)
-copy_figure(OUT_PNG, "figure 5.5.png")
+copy_figure(OUT_PNG, "figure 5.6.tiff")
 plt.close(fig)
 print(f"Figure saved: {OUT_PNG}")

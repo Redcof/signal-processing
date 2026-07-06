@@ -236,7 +236,7 @@ for col_idx, (label, r_arr, col) in enumerate([
     ax.legend(fontsize=8); ax.grid(True, alpha=0.3)
 
 plt.tight_layout()
-save_fig(fig, f"weight_search_s{N_SEEDS}_p{N_IMAGES}.png", bw=False)
+save_fig(fig, f"weight_search_s{N_SEEDS}_p{N_IMAGES}.tiff", bw=False)
 plt.close(fig)
-print(f"\n  Figure saved: weight_search_s{N_SEEDS}_p{N_IMAGES}.png")
+print(f"\n  Figure saved: weight_search_s{N_SEEDS}_p{N_IMAGES}.tiff")
 print("Done.")
