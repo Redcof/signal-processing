@@ -80,7 +80,7 @@ the project root via `utils.copy_figure`.
 
 ## Citing SNOCS
 
-If you find this repository useful, please consider giving a star :star: and citation :t-rex::
+If you find this repository useful, please consider giving a star :star: and citation:
 
 ```
 @misc{sardar2026snocs,
