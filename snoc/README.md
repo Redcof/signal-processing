@@ -77,3 +77,16 @@ Not run directly — imported by all scripts above.
 Each script writes figures to a `results/` subdirectory alongside itself.
 Scripts that generate thesis figures additionally copy select outputs to
 the project root via `utils.copy_figure`.
+
+## Citing SNOCS
+
+If you find this repository useful, please consider giving a star :star: and citation :t-rex::
+
+```
+@misc{sardar2026snocs,
+  title={{SNOCS}},
+  author={Sardar, Soumen},
+  year={2026},
+  url={https://github.com/Redcof/signal-processing/tree/main/snoc},
+}
+```

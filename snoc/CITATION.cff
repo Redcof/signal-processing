@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, cite it as below."
+title: "SNOCS"
+authors:
+  - family-names: "Sardar"
+    given-names: "Soumen"
+version: 1.0.0
+date-released: 2026-07-14
+url: "https://github.com/Redcof/signal-processing/tree/main/snoc"
