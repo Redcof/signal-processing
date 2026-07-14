@@ -209,7 +209,7 @@ def stage1_synthetic(mm_per_pixel: float = 1.0, save_dir: str = "results"):
     plt.close(fig)
     
     print(f"\n  → Figure saved: {save_dir}/sythentic_evaluation.tiff")
-    copy_figure(path, "figure 5.1.tiff")
+    copy_figure(path, "Figure_5.1.tiff")
 
     return {
         "series_A": {"p": ps, "scores": scores_A, "gt": gts_A, "rho": rho_A},

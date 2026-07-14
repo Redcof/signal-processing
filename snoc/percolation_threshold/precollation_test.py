@@ -348,7 +348,7 @@ def run_percolation_validation(save_dir: str = "results",
             save_fig(fig, path1, bw=False)
             plt.close(fig)
             if exp_key == "700x600_s80_p100_mm1.0":
-                copy_figure(path1, "figure 5.3.tiff")
+                copy_figure(path1, "Figure_5.3.tiff")
             print(f"\n  → Figure all percolation: {path1}")
 
     # ################################################################################

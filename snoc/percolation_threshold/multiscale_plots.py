@@ -116,7 +116,7 @@ def visualize_example_images(save_dir: str, mm_per_pixel: float):
             file_name=file_name,
         title="Sample Images and Pooled Maps at Key Occupancy Values")
     path = save_dir / file_name
-    copy_figure(path, "figure 5.4.tiff")
+    copy_figure(path, "Figure_5.4.tiff")
     
     frag_blob_configs = [
         ("1 large blob",  'black',    make_blob_field(n_blobs=1,  radius=100)),
@@ -133,7 +133,7 @@ def visualize_example_images(save_dir: str, mm_per_pixel: float):
             file_name=file_name,
         title="Fragmented Blobs and Pooled Maps")
     path = save_dir / file_name
-    copy_figure(path, "figure 5.2.tiff")
+    copy_figure(path, "Figure_5.2.tiff")
 
 if __name__ == "__main__":
     save_dir = pathlib.Path(__file__).parent / "results"

@@ -29,3 +29,5 @@ develop-eggs/
 # Logs and temporary files
 *.tmp
 *.tiff
+*.npy
+/*.png

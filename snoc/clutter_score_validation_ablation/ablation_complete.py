@@ -316,7 +316,7 @@ ax.legend(fontsize=8); ax.grid(True, alpha=0.3)
 
 path = save_dir / "ablation_complete.tiff"
 save_fig(fig, path, bw=False)
-copy_figure(path, "figure 5.5.tiff")
+copy_figure(path, "Figure_5.5.tiff")
 
 plt.close(fig)
 print(f"\n  Figure saved: {path}")

@@ -3,6 +3,9 @@ Weight Search — 100 Seeds × 80 Images
 All three steps per seed, then aggregate statistics.
 """
 
+import os
+
+from cv2 import data
 import numpy as np
 import matplotlib
 
@@ -23,6 +26,9 @@ MM_PER_PIXEL = 1.0
 EPS          = 1e-8
 N_SEEDS      = 100
 N_IMAGES     = 80
+
+save_dir = os.path.join(os.path.dirname(__file__), "results", str(N_IMAGES))
+os.makedirs(save_dir, exist_ok=True)
 
 def grid_search(feats, gt):
     steps = np.round(np.arange(0.05, 0.96, 0.05), 2)
@@ -66,16 +72,52 @@ print("="*55)
 
 ps = np.linspace(0.02, 0.50, N_IMAGES)
 
-# storage
-grid_w  = np.zeros((N_SEEDS, 3))
-grid_r  = np.zeros(N_SEEDS)
-bayes_w = np.zeros((N_SEEDS, 3))
-bayes_r = np.zeros(N_SEEDS)
-anal_w  = np.zeros((N_SEEDS, 3))
-anal_r  = np.zeros(N_SEEDS)
-prior_r = np.zeros(N_SEEDS)
+def save(collection_name, npd):
+    path = os.path.join(save_dir, f'{collection_name}.npy')
+    if not os.path.exists(path):
+        np.save(path, npd)
+        return
 
-for seed in range(N_SEEDS):
+    current = load(collection_name)
+    if npd.shape[0] >= current.shape[0]:
+        np.save(path, npd)
+    # else: do nothing, keep deeper-progress file
+
+def load(collection_name):
+    # Load from a file (appends .npy automatically)
+    return np.load(os.path.join(save_dir, f'{collection_name}.npy'))
+
+def init(collection_name, init_value):
+    path = os.path.join(save_dir, f'{collection_name}.npy')
+    # when the file does not exist, return the initial value
+    if not os.path.exists(path):
+        return init_value
+
+    # load the existing file
+    loaded = load(collection_name)
+    new_seeds = init_value.shape[0]
+    old_seeds = loaded.shape[0]
+    # if the new array is larger, copy the old values into the new array
+    if new_seeds > old_seeds:
+        init_value[:old_seeds] = loaded[:old_seeds]
+        return init_value
+    else:
+        # if the new array is smaller, return the first 
+        # 'new_seeds' values from the loaded array
+        return loaded[:new_seeds]
+
+# storage
+grid_w  = init("grid_w", np.zeros((N_SEEDS, 3)))
+grid_r  = init("grid_r", np.zeros(N_SEEDS))
+bayes_w = init("bayes_w", np.zeros((N_SEEDS, 3)))
+bayes_r = init("bayes_r", np.zeros(N_SEEDS))
+anal_w  = init("anal_w", np.zeros((N_SEEDS, 3)))
+anal_r  = init("anal_r", np.zeros(N_SEEDS))
+prior_r = init("prior_r", np.zeros(N_SEEDS))
+
+start_seed = prior_r.shape[0] if N_SEEDS >= prior_r.shape[0] else 0
+
+for seed in range(start_seed, N_SEEDS):
     rng   = np.random.default_rng(seed)
     feats = np.array([extract_features_12(
                         (rng.random((700, 600)) < p).astype(np.float32))
@@ -111,6 +153,13 @@ for seed in range(N_SEEDS):
               f"bayes_rho={bayes_r[:seed+1].mean():.4f}")
 
 # ── summary ───────────────────────────────────────────────────────────────────
+save("grid_w",  grid_w)
+save("grid_r",  grid_r)
+save("bayes_w", bayes_w)
+save("bayes_r", bayes_r)
+save("anal_w",  anal_w)
+save("anal_r",  anal_r)
+save("prior_r", prior_r)
 
 print("\n" + "="*65)
 print(f"{'Method':<28} {'w1 mean±std':>14} {'w2 mean±std':>14} {'w3 mean±std':>14}")

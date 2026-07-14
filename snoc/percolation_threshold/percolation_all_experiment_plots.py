@@ -204,6 +204,6 @@ fig.legend(handles=patches, loc="lower center", ncol=4,
            bbox_to_anchor=(0.5, -0.015))
 
 save_fig(fig, OUT_PNG, bw=True)
-copy_figure(OUT_PNG, "figure 5.6.tiff")
+copy_figure(OUT_PNG, "Figure_5.6.tiff")
 plt.close(fig)
 print(f"Figure saved: {OUT_PNG}")

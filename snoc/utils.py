@@ -24,5 +24,5 @@ def save_fig(fig, save_path, bw=False):
 
 def copy_figure(src_path, dest_name):
     dest_path = (pathlib.Path(__file__).parent / "figures" / dest_name)
-    shutil.copy(src_path.with_suffix('.tiff'), dest_path.with_suffix('.tiff'))
+    shutil.copy(pathlib.Path(src_path).with_suffix('.tiff'), dest_path.with_suffix('.tiff'))
     print(f"Copied : {src_path} -> {dest_path}")
