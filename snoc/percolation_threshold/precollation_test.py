@@ -344,7 +344,7 @@ def run_percolation_validation(save_dir: str = "results",
             ax.legend(fontsize=9)
             ax.grid(True, alpha=0.3)
 
-            path1 = os.path.join(save_dir, "figure1_percolation_main.tiff")
+            path1 = os.path.join(save_dir, "figure1_percolation_main.png")
             save_fig(fig, path1, bw=False)
             plt.close(fig)
             if exp_key == "700x600_s80_p100_mm1.0":

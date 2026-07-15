@@ -19,7 +19,7 @@ import csv, os
 root_dir = pathlib.Path(__file__).parent / "results"
 root_dir.mkdir(exist_ok=True)
 CSV_PATH = root_dir / "percolation_summary.csv"
-OUT_PNG  = root_dir / "percolation_summary.tiff"
+OUT_PNG  = root_dir / "percolation_summary.png"
 PC       = 0.5927   # theoretical threshold
 
 def load(path):

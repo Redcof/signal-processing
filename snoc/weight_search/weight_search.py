@@ -13,6 +13,8 @@ Ground truth: theory-based GT label on synthetic Bernoulli fields
 
 import numpy as np
 import matplotlib
+
+from utils import save_fig
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
@@ -207,9 +209,10 @@ ax.set_ylabel("Weight value"); ax.set_title("Weight comparison across methods")
 ax.legend(fontsize=8); ax.grid(True, alpha=0.3, axis="y"); ax.set_ylim(0, 0.75)
 
 plt.tight_layout()
-fig.savefig(f"{SAVE_DIR}/weight_search_results.tiff", dpi=130, bbox_inches="tight")
+# fig.savefig(f"{SAVE_DIR}/weight_search_results.tiff", dpi=130, bbox_inches="tight")
+save_fig(fig, f"{SAVE_DIR}/weight_search_results.png", bw=False)
 plt.close(fig)
-print(f"\n  Figure saved: {SAVE_DIR}/weight_search_results.tiff")
+print(f"\n  Figure saved: {SAVE_DIR}/weight_search_results.png")
 
 # save final weights
 np.save(f"{SAVE_DIR}/optimal_weights.npy",

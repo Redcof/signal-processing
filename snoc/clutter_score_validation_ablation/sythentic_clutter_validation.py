@@ -204,11 +204,11 @@ def stage1_synthetic(mm_per_pixel: float = 1.0, save_dir: str = "results"):
         ax.imshow(img, cmap="gray", vmin=0, vmax=1)
         ax.set_title(f"{name}\nClutter score={arch_scores[name]:.4f}")
         ax.axis("off")
-    path = os.path.join(save_dir, "sythentic_evaluation.tiff")
+    path = os.path.join(save_dir, "sythentic_evaluation.png")
     save_fig(plt, path, bw=False)
     plt.close(fig)
     
-    print(f"\n  → Figure saved: {save_dir}/sythentic_evaluation.tiff")
+    print(f"\n  → Figure saved: {save_dir}/sythentic_evaluation.png")
     copy_figure(path, "Figure_5.1.tiff")
 
     return {
@@ -365,7 +365,7 @@ def stage3_ablation(mm_per_pixel: float = 1.0,
     ax.legend(fontsize=8)
     ax.grid(True, alpha=0.3)
 
-    path = os.path.join(save_dir, "stage3_ablation.tiff")
+    path = os.path.join(save_dir, "stage3_ablation.png")
     save_fig(fig, path, bw=False)
     plt.close(fig)
     print(f"\n  → Figure saved: {path}")

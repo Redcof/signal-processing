@@ -111,7 +111,7 @@ def visualize_example_images(save_dir: str, mm_per_pixel: float):
         else:
             colors.append("black")
             desc_s.append(f"p = {p:.4f}")
-    file_name="figure3_percolation_samples.tiff"
+    file_name="figure3_percolation_samples.png"
     figure_analysis_grid(mm_per_pixel, save_dir, main_images, desc_s, colors,
             file_name=file_name,
         title="Sample Images and Pooled Maps at Key Occupancy Values")
@@ -128,7 +128,7 @@ def visualize_example_images(save_dir: str, mm_per_pixel: float):
     ]
     
     desc_s, colors, main_images = map(list, zip(*frag_blob_configs))
-    file_name="figure3_sythentic_fragmented_blobs.tiff"
+    file_name="figure3_sythentic_fragmented_blobs.png"
     figure_analysis_grid(mm_per_pixel, save_dir, main_images, desc_s, colors,
             file_name=file_name,
         title="Fragmented Blobs and Pooled Maps")
