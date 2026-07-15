@@ -26,4 +26,6 @@ def copy_figure(src_path, dest_name):
     dest_path = (pathlib.Path(__file__).parent / "figures" / dest_name)
     shutil.copy(pathlib.Path(src_path).with_suffix('.tiff'), dest_path.with_suffix('.tiff'))
     shutil.copy(pathlib.Path(src_path).with_suffix('.png'), dest_path.with_suffix('.png'))
+    pathlib.Path(src_path).with_suffix('.tiff').unlink(missing_ok=True)
+    pathlib.Path(src_path).with_suffix('.png').unlink(missing_ok=True)
     print(f"Copied : {src_path} -> {dest_path}")
