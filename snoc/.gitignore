@@ -30,4 +30,4 @@ develop-eggs/
 *.tmp
 *.tiff
 *.npy
-/*.png
+*.png
